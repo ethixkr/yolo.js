@@ -1,0 +1,59 @@
+{
+	"name": "@hiddentn/yolo.js",
+	"version": "0.1.0",
+	"description": "a JavaScript API for YOLO Object detection in the browser and Node with tensorflow.js",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/TheHidden1/YOLO.JS.git"
+	},
+	"files": [
+		"build/**/*"
+	],
+	
+	"main": "build/commonjs/index.js",
+	"types": "build/commonjs/index.d.ts",
+	"module": "build/es6/index.js",
+	"jsdelivr": "dist/yolo.js",
+	"unpkg": "dist/yolo.js",
+
+	"scripts": {
+		"clean": "rimraf dist build",
+		"start:browser": "webpack-dev-server --open --config webpack.dev.js --content-base examples/ ",
+		"build:browser": "webpack --config webpack.prod.js",
+		"build:commonjs": "tsc",
+		"build:es6": "tsc --p tsconfig.es6.json",
+		"build": "npm run clean && npm run lint && npm run build:browser && npm run build:commonjs && npm run build:es6",
+		"lint": "tslint -p . -t verbose"
+	},
+	"bugs": {
+		"url": "https://github.com/TheHidden1/YOLO.JS/issues"
+	},
+	"homepage": "https://github.com/TheHidden1/YOLO.JS#readme",
+	"keywords": [
+		"YOLO",
+		"Classification",
+		"Object Detection",
+		"TF.js",
+		"AI",
+		"ML"
+	],
+	"author": "TheHidden1",
+	"license": "MIT",
+	"dependencies": {
+		"@tensorflow/tfjs": "1.5.1",
+		"@tensorflow/tfjs-backend-wasm": "^1.5.1-alpha5"
+	},
+	"devDependencies": {
+		"@types/node": "^11.12.0",
+		"awesome-typescript-loader": "^5.2.1",
+		"rimraf": "2.6.2",
+		"terser-webpack-plugin": "^1.2.3",
+		"tslint": "^5.20.1",
+		"tslint-loader": "^3.5.4",
+		"typescript": "^3.3.3",
+		"webpack": "^4.29.5",
+		"webpack-cli": "^3.3.0",
+		"webpack-dev-server": "^3.2.1",
+		"webpack-merge": "^4.2.1"
+	}
+}

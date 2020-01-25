@@ -1,0 +1,38 @@
+{
+  "compilerOptions": {
+    
+    "lib": ["es2015", "dom"],
+
+    "outDir": "build/commonjs",  
+    "module": "commonjs",
+    "target": "es5",
+
+
+    "noImplicitAny": false,
+    "sourceMap": true,
+    "removeComments": false,
+    "preserveConstEnums": true,
+    "declaration": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "noUnusedLocals": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    "noUnusedParameters": false,
+    "pretty": true,
+    "noFallthroughCasesInSwitch": true,
+    "allowUnreachableCode": false,
+    "downlevelIteration": true,
+    "resolveJsonModule": true
+  },
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "demos/**/**",
+    "dist",
+    "node_modules",
+    "img"
+  ]
+}
